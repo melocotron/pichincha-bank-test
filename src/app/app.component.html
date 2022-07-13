@@ -1,3 +1,23 @@
-<h1>Pachincha Bank</h1>
+<div class="parent">
+  <h1>Listado de Pokemon</h1>
+  <div class="row space-between">
+    <div class="search-box">
+      <i class="fa-solid fa-magnifying-glass box-icon"></i>
+      <input type="text" name="" placeholder="Buscar">
+    </div>
+    <div>
+      <button class="btn space-around bg-primary-color">
+        <i class="fa-solid fa-plus button-icon"></i> Nuevo
+      </button>
+    </div>
 
-<router-outlet></router-outlet>
+  </div>
+  <div></div>
+  <br/>
+  <app-pokemon-list [pokemonList]="pokemons"></app-pokemon-list>
+  <!-- <div class="box">
+    <input type="text" name="" placeholder="Buscar">
+  </div> -->
+</div>
+
+<!-- <router-outlet></router-outlet> -->

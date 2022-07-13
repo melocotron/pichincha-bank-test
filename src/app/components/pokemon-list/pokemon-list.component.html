@@ -1,0 +1,25 @@
+<table class="tg">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Imagen</th>
+      <th>Ataque</th>
+      <th>Defensa</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let pokemon of pokemonList">
+      <td>{{ pokemon.name }}</td>
+      <td>
+        <img class="image" src="{{pokemon.image}}" alt="{{pokemon.name}}">
+      </td>
+      <td>{{ pokemon.attack }}</td>
+      <td>{{ pokemon.defense }}</td>
+      <td>
+        <i class="pointer fa-solid fa-pen primary-color"></i>
+        <i class="pointer fa-solid fa-trash-can pl-25 primary-color"></i>
+      </td>
+    </tr>
+  </tbody>
+</table>
