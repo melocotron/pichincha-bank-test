@@ -1,0 +1,44 @@
+<div id="newPokemon" class="box">
+  <form [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
+    <div class="row center">
+      <h1>Nuevo Pokemon</h1>
+    </div>
+    <div class="row items-center space-around mt-30">
+      <div  class="row items-center row-padding">
+        <div>Nombre:</div>
+        <div class="box ml-20">
+          <input type="text" formControlName="name" placeholder="nombre">
+        </div>
+      </div>
+      <div class="row items-center row-padding">
+        <div class="mr-20">Ataque:</div>
+        <div class="row items-center range">
+          0 <input type="range" formControlName="attack" step="1" value="1" max="100" placeholder="0"> 100
+        </div>
+      </div>
+    </div>
+    <div class="row items-center space-around mt-30">
+      <div  class="row items-center row-padding">
+        <div>Imagen:</div>
+        <div class="box ml-20">
+          <input type="text" formControlName="image" placeholder="url">
+        </div>
+      </div>
+      <div class="row items-center row-padding">
+        <div class="mr-20">Defensa:</div>
+        <div class="row items-center range">
+          0 <input type="range" formControlName="defense" step="1" value="1" max="100" placeholder="0"> 100
+        </div>
+      </div>
+    </div>
+    <div class="row items-center row-padding center mt-30">
+        <button type="submit" class="btn space-around bg-primary-color mr-20" [ngClass]="{'btn-disabled': form.invalid }">
+          <i class="fa-solid fa-floppy-disk"></i> Guardar
+        </button>
+        <button type="button" class="btn space-around bg-primary-color" (click)="cancelCreate()" >
+          <i class="fa-solid fa-x"></i> Cancelar
+        </button>
+    </div>
+  </form>
+</div>
+

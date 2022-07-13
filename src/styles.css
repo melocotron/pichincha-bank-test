@@ -36,8 +36,28 @@ h1 {
   justify-content: space-around;
 }
 
+.center {
+  justify-content: center;
+}
+
+.items-center {
+  align-items: center;
+}
+
 .pl-25 {
   padding-left: 25px;
+}
+
+.ml-20 {
+  margin-left: 20px;
+}
+
+.mr-20 {
+  margin-right: 20px;
+}
+
+.mt-30 {
+  margin-top: 30px;
 }
 
 .primary-color {
@@ -68,4 +88,26 @@ td, th {
   padding:10px 5px;
   word-break:normal;
   text-align: center;
+}
+
+.btn {
+  height: 40px;
+  width: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  color: white;
+  border: none;
+  border-radius: 2px;
+  box-shadow: 0px 0px 2px #424242bf;
+  cursor: pointer;
+}
+
+.button-icon {
+  font-size: 1.2rem;
+}
+
+.btn-disabled {
+  background-color: #6558f8ad;
+  pointer-events: none;
 }

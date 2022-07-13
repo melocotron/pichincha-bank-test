@@ -26,20 +26,3 @@
   font-size: 1.2rem;
   color: #c7c7c7;
 }
-
-.btn {
-  height: 40px;
-  width: 100px;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  color: white;
-  border: none;
-  border-radius: 2px;
-  box-shadow: 0px 0px 2px #424242bf;
-  cursor: pointer;
-}
-
-.button-icon {
-  font-size: 1.2rem;
-}

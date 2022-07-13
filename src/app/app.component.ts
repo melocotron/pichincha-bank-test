@@ -12,6 +12,7 @@ export class AppComponent implements OnInit {
 
   public pokemons: Pokemon[] = [];
   public pokemonFiltered: Pokemon[] = [];
+  public btnActive = true;
 
   constructor(
     private pokemonService: PokemonService
@@ -27,7 +28,6 @@ export class AppComponent implements OnInit {
   }
 
   searchPokemon(evt: any) {
-
     if (evt.value !== '') {
       let name = evt.value;
       this.pokemonFiltered = this.pokemons.filter( pokemon => {
@@ -40,5 +40,18 @@ export class AppComponent implements OnInit {
       this.pokemonFiltered = this.pokemons;
       console.log('else filter', this.pokemonFiltered);
     }
+  }
+
+  newPokemon() {
+    this.btnActive = !this.btnActive;
+    setTimeout(() => {
+      document.getElementById("newPokemon")?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, 100);
+    console.log(this.btnActive)
+  }
+
+    disableBtn(evt: boolean) {
+    console.log('event', evt);
+    this.btnActive = evt;
   }
 }
