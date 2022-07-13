@@ -3,4 +3,7 @@ export interface PokemonDto {
     image:     string;
     attack:    number;
     defense:   number;
+    hp:        number;
+    type:      string;
+    idAuthor: number;
 }
