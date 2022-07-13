@@ -17,8 +17,12 @@
       <td>{{ pokemon.attack }}</td>
       <td>{{ pokemon.defense }}</td>
       <td>
-        <i class="pointer fa-solid fa-pen primary-color"></i>
-        <i class="pointer fa-solid fa-trash-can pl-25 primary-color"></i>
+        <span (click)="onUpdateIcon(pokemon.id)">
+          <i type="button" class="pointer fa-solid fa-pen primary-color"></i>
+        </span>
+        <span (click)="onDeleteIcon(pokemon.id)">
+          <i class="pointer fa-solid fa-trash-can pl-25 primary-color"></i>
+        </span>
       </td>
     </tr>
     <tr *ngIf="pokemonList.length < 1">
@@ -26,3 +30,65 @@
     </tr>
   </tbody>
 </table>
+<br>
+<!-- seccion de actualizar -->
+<div id="update" class="box" *ngIf="updateActive">
+  <form [formGroup]="updateForm" (ngSubmit)="onSubmitUpdate(updateForm.value)">
+    <div class="row center">
+      <h1>Actualizar Pokemon</h1>
+    </div>
+    <div class="row items-center space-around mt-30">
+      <div  class="row items-center row-padding">
+        <div>Nombre:</div>
+        <div class="box ml-20">
+          <input type="text" formControlName="name" placeholder="{{pokemonUpdate.name}}">
+
+        </div>
+      </div>
+      <div class="row items-center row-padding">
+        <div class="mr-20">Ataque:</div>
+        <div class="row items-center range">
+          0 <input type="range" id="pokemonAttack" formControlName="attack" step="1" value="1" max="100" placeholder="1"> 100
+        </div>
+      </div>
+    </div>
+    <div class="row items-center space-around mt-30">
+      <div  class="row items-center row-padding">
+        <div>Imagen:</div>
+        <div class="box ml-20">
+          <input type="text" formControlName="image" placeholder="{{pokemonUpdate.image}}">
+        </div>
+      </div>
+      <div class="row items-center row-padding">
+        <div class="mr-20">Defensa:</div>
+        <div class="row items-center range">
+          0 <input type="range" formControlName="defense" step="1" value="1" max="100" placeholder="0"> 100
+        </div>
+      </div>
+    </div>
+    <div class="row items-center row-padding center mt-30">
+      <button type="submit" class="btn space-around bg-primary-color mr-20" [ngClass]="{'btn-disabled': updateForm.invalid }">
+        <i class="fa-solid fa-floppy-disk"></i> Guardar
+      </button>
+      <button type="button" class="btn space-around bg-primary-color" (click)="cancelUpdate()" >
+        <i class="fa-solid fa-x"></i> Cancelar
+      </button>
+    </div>
+  </form>
+</div>
+<!-- seccion confirmar eliminacion -->
+<div id="update" class="box" *ngIf="activateDelete">
+  <div class="column">
+    <div class="row center">
+      <h1>¿Seguro de Eliminar el pokemon?</h1>
+    </div>
+    <div class="row items-center row-padding center mt-30">
+      <button type="submit" class="btn space-around bg-primary-color mr-20" (click)="confirmDelete()">
+        <i class="fa-solid fa-check"></i> Si
+      </button>
+      <button type="button" class="btn space-around bg-primary-color" (click)="cancelDelete()" >
+        <i class="fa-solid fa-x"></i> No
+      </button>
+    </div>
+  </div>
+</div>

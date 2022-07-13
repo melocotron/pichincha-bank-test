@@ -6,3 +6,27 @@
   text-align: center;
   padding: 10px 0 10px 0;
 }
+
+.icon-disable {
+  pointer-events: none;
+  color: #6558f8ad;
+}
+
+.box {
+  width: auto;
+  height: auto;
+  padding: 10px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: rgba(196, 196, 196, 0.70);
+  box-shadow: 0px 0px 2px rgba(196, 196, 196, 0.70);
+}
+
+.box > input {
+  border: none;
+  outline: none;
+}
+
+.row-padding {
+  padding: 10px 30px 10px 30px;
+}

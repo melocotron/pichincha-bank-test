@@ -3,7 +3,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 import { PokemonService } from "../../services/pokemon.service";
-import { PokemonDto } from "../../models/pokemonDTO.model";
+import { PokemonDto } from "../../models/pokemonDto.model";
 
 @Component({
   selector: 'app-new-pokemon',

@@ -13,7 +13,7 @@ import { ReactiveFormsModule, FormsModule } from "@angular/forms";
   declarations: [
     AppComponent,
     PokemonListComponent,
-    NewPokemonComponent
+    NewPokemonComponent,
   ],
   imports: [
     BrowserModule,
