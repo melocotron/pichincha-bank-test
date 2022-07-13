@@ -3,7 +3,7 @@
   <div class="row space-between">
     <div class="search-box">
       <i class="fa-solid fa-magnifying-glass box-icon"></i>
-      <input type="text" name="" placeholder="Buscar">
+      <input type="text" name="search" placeholder="Buscar" (keydown.enter)="searchPokemon($event.target)">
     </div>
     <div>
       <button class="btn space-around bg-primary-color">
@@ -14,7 +14,7 @@
   </div>
   <div></div>
   <br/>
-  <app-pokemon-list [pokemonList]="pokemons"></app-pokemon-list>
+  <app-pokemon-list [pokemonList]="pokemonFiltered"></app-pokemon-list>
   <!-- <div class="box">
     <input type="text" name="" placeholder="Buscar">
   </div> -->

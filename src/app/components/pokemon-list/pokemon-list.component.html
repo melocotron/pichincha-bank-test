@@ -21,5 +21,8 @@
         <i class="pointer fa-solid fa-trash-can pl-25 primary-color"></i>
       </td>
     </tr>
+    <tr *ngIf="pokemonList.length < 1">
+      <td colspan="5" class="no-results">No hay resultados</td>
+    </tr>
   </tbody>
 </table>
